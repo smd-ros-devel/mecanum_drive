@@ -1,0 +1,20 @@
+<package>
+  <description brief="mecanum_drive">
+
+     mecanum_drive
+
+  </description>
+  <author>Andrew Pierson, Dakota Nelson</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/mecanum_drive</url>
+  <depend package="roscpp"/>
+  <depend package="geometry_msgs"/>
+  <depend package="trajectory_msgs"/>
+  <depend package="sensor_msgs"/>
+  <depend package="nav_msgs"/>
+  <depend package="tf"/>
+
+</package>
+
+
