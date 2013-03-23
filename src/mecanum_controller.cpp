@@ -7,8 +7,8 @@ namespace mecanum_drive
 MecanumController::MecanumController(ros::NodeHandle &n) : n(n)
 {
 	ros::NodeHandle nh("~");
-	nh.param<double>("wheelBase1", wheelBase1, 1.0);
-	nh.param<double>("wheelBase2", wheelBase2, 1.0);
+	nh.param<double>("wheelBase1", wheelBase1, 1.0);//This is the distance between the left and right wheel pairs. (wheel Track)
+	nh.param<double>("wheelBase2", wheelBase2, 1.0);//This is the distance between the fornt and rear wheel wheels. (wheel Base)
 	nh.param<double>("wheel_radius", wheelRadius, 0.2);
 	nh.param<std::string>("front_left", frontLeft, "front_left");
 	nh.param<std::string>("front_right", frontRight, "front_right");
