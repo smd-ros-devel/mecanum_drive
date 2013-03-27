@@ -58,20 +58,30 @@ void MecanumController::inverseMecanum4WKinematics(const double &linear_x, const
 	// temp
 	const double temp1 = angular_z * ( wheelBase1 + wheelBase2 ) / 2.0;
 
+	//const double c1 = 1.0 / (2.0 * M_PI * wheelRadius);
+	//const double c2 = angular_z * (wheelBase1 + wheelBase2) / 2.0;
+
 	// wheel 1:
 	traj.joint_names.push_back(frontLeft);
+	//point.velocities[0] = c1 * (linear_x - linear_y - c2);
 	//point.velocities[0] = (1.0 / (wheelRadius * 2.0 * M_PI)) * ( linear_x - linear_y - (wheelBase1 + wheelBase2) / 2.0 * angular_z); 
 	point.velocities[0] = ( linear_x - linear_y - temp1 ) / wheelRadius;
+
 	// wheel 2:
 	traj.joint_names.push_back(frontRight);
+	//point.velocities[1] = c1 * (linear_x + linear_y + c2);
 	//point.velocities[1] = (1.0 / (wheelRadius * 2.0 * M_PI)) * ( linear_x + linear_y + (wheelBase1 + wheelBase2) / 2.0 * angular_z); 
 	point.velocities[1] = ( linear_x + linear_y + temp1 ) / wheelRadius;
+
 	// wheel 3:
 	traj.joint_names.push_back(backLeft);
+	//point.velocities[2] = c1 * (linear_x + linear_y - c2);
 	//point.velocities[2] = (1.0 / (wheelRadius * 2.0 * M_PI)) * ( linear_x + linear_y - (wheelBase1 + wheelBase2) / 2.0 * angular_z); 
 	point.velocities[2] = ( linear_x + linear_y - temp1 ) / wheelRadius;
+
 	// wheel 4:
 	traj.joint_names.push_back(backRight);
+	//point.velocities[3] = c1 * (linear_x - linear_y + c2);
 	//point.velocities[3] = (1.0 / (wheelRadius * 2.0 * M_PI)) * ( linear_x - linear_y + (wheelBase1 + wheelBase2) / 2.0 * angular_z); 
 	point.velocities[3] = ( linear_x - linear_y + temp1 ) / wheelRadius;
 
